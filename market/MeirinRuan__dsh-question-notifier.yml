@@ -1,0 +1,7 @@
+url: https://github.com/MeirinRuan/dsh-question-notifier
+name: dsh-question-notifier
+category: notify
+description:
+  en: Show non-modal reminders and optional system notifications for pending DSH questions and plan reviews.
+  zh: 为 DSH 待回答问题和计划审阅显示非模态提醒，并提供可选系统通知。
+tarball: https://github.com/MeirinRuan/dsh-question-notifier/releases/latest/download/dsh-question-notifier.tgz

@@ -1,0 +1,49 @@
+{
+  "name": "dsh-question-notifier",
+  "version": "0.1.1",
+  "type": "module",
+  "description": "Non-modal reminders and optional system notifications for pending DSH questions and plan reviews.",
+  "author": "MeirinRuan",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MeirinRuan/dsh-question-notifier"
+  },
+  "homepage": "https://github.com/MeirinRuan/dsh-question-notifier",
+  "bugs": {
+    "url": "https://github.com/MeirinRuan/dsh-question-notifier/issues"
+  },
+  "exports": {
+    ".": "./src/host.mjs",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src/host.mjs",
+    "lib/client.js",
+    "cordis.patch.yml",
+    "LICENSE",
+    "README.md",
+    "README.zh.md",
+    "docs/guide.md",
+    "docs/guide.zh.md"
+  ],
+  "engines": {
+    "dsh": "0.2.2-rc.1",
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "packageManager": "pnpm@11.28.5",
+  "dsh": {
+    "bundle": {"patch": "./cordis.patch.yml"},
+    "client": {"platform": "web", "inject": ["@deepseek-ai/dsh-client-ui-session", "@deepseek-ai/dsh-client-ui-workspace", "@deepseek-ai/dsh-client-locale"]}
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "prepack": "pnpm run build"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "react": "^18.2.0"
+  }
+}
